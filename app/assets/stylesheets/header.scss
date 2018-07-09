@@ -1,0 +1,27 @@
+header{
+  //position: fixed;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  #site-logo{
+    vertical-align: middle;
+    display: inline-block;
+    width: 49%;
+    #logo{
+      width: 10%;
+
+    }
+    #site-name{
+      margin-left: 10px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 30px;
+
+
+    }
+  }
+  #add-place{
+    text-align: right;
+    width: 49%;
+    margin-right: 0px;
+    display: inline-block;
+  }
+}
