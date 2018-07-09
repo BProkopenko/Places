@@ -6,10 +6,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
   </head>
 
   <body>
+  <div id="flashMessages">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+  </div>
+  <%= render 'places/place_form' %>
   <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>
+<script type="text/javascript">
+    $('.show-places-form').click(function () {
+        var form_id = $('#' + $(this).attr("rel"));
+        $(form_id).show();
+        $('.place-form').show();
+
+    })
+    $('.close').click(function () {
+        $('.place-form, #background-places_form').hide();
+
+    })
+
+</script>

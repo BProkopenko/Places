@@ -1,0 +1,48 @@
+// Place all the styles related to the places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#background-places_form {
+  display: none;
+  z-index: 1;
+  height: 100vh;
+  background-color: rgba(1,153,217,0.48);
+  position: fixed;
+  .close{
+    float: right;
+    position: inherit;
+    top: 5px;
+    right: 5px;
+  }
+  #place-form {
+    box-sizing: border-box;
+    text-align: center;
+    width: 40%;
+    z-index: 2;
+    position: fixed;
+    vertical-align: middle;
+    display: inline-block;
+    top: 30vh;
+    left: 35%;
+  }
+}
+.table{
+  //text-align: center;
+  .small, .middle, .large{
+    position: relative;
+    width: 20%;
+    display: inline-block;
+    background-color: #B00100;
+    border: 2px solid rgba(12,10,10,1);
+  }
+  .small{
+    height: 100px;
+  }
+  .middle{
+    height: 150px;
+  }
+  .large{
+    height: 200px;
+  }
+}
+

@@ -62,6 +62,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
 
 # Images
+#gem 'paperclip', '~> 6.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
@@ -69,7 +70,6 @@ gem 'mini_magick'
 gem 'devise'
 
 #Heroku
-group :production do
-  gem 'pg', '0.17.1'
-  gem 'rails_12factor', '0.0.2'
-end
+
+#Masonry
+gem 'masonry-rails', '~> 0.2.4'
