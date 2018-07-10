@@ -22,3 +22,5 @@
 
 * Ignore idea folder
 /.idea/*
+#ignore public folder
+/public/*
