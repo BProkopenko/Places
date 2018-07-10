@@ -4,45 +4,74 @@
 
 #background-places_form {
   display: none;
-  z-index: 1;
+  z-index: 4;
   height: 100vh;
-  background-color: rgba(1,153,217,0.48);
+  background-color: rgba(0, 0, 0, 0.45);
   position: fixed;
-  .close{
-    float: right;
-    position: inherit;
-    top: 5px;
-    right: 5px;
-  }
+  margin-top: -7%;
+
   #place-form {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-radius: 10px;
     box-sizing: border-box;
     text-align: center;
     width: 40%;
-    z-index: 2;
+    z-index: 5;
     position: fixed;
     vertical-align: middle;
     display: inline-block;
     top: 30vh;
     left: 35%;
-  }
-}
-.table{
-  //text-align: center;
-  .small, .middle, .large{
-    position: relative;
-    width: 20%;
-    display: inline-block;
-    background-color: #B00100;
-    border: 2px solid rgba(12,10,10,1);
-  }
-  .small{
-    height: 100px;
-  }
-  .middle{
-    height: 150px;
-  }
-  .large{
-    height: 200px;
+    background-color: #F7F7F7;
+    .close-form {
+      cursor: pointer;
+      text-align: right;
+    }
+    form {
+      .form-control {
+        display: block;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+      }
+    }
+
   }
 }
 
+.box {
+  background-color: rgba(255, 1, 0, 0);
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+  img {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .place-name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    display: block;
+  }
+  .place-description {
+    margin-top: 5px;
+    font-size: medium;
+    color: #000000;
+    height: 26pt;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+.place-image {
+  display: block;
+  box-sizing: border-box;
+  min-width: 260px;
+  border-radius: 10px;
+  margin: auto;
+}

@@ -1,0 +1,6 @@
+<% if @places.any? %>
+  <div id="masonry-container" class="container transitions-enabled infinite-scroll clearfix">
+    <div class="grid-sizer"></div>
+    <%= render @places %>
+  </div>
+<% end %>

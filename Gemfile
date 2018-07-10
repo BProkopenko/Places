@@ -73,3 +73,6 @@ gem 'devise'
 
 #Masonry
 gem 'masonry-rails', '~> 0.2.4'
+
+#haml
+gem 'haml', '~> 5.0', '>= 5.0.4'

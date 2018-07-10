@@ -1,9 +1,9 @@
 class Place < ApplicationRecord
-	validates :name, presence: true
-	validates :description, presence: true, length: {maximum: 150}
+	validates :name, presence: true, length: {maximum: 50}
+	validates :description, presence: true, length: {maximum: 500}
 	mount_uploader :picture, PictureUploader
 	validate :picture_size
-
+belongs_to :user
 	private
 
 	def picture_size

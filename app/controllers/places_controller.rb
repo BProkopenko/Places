@@ -2,7 +2,11 @@ class PlacesController < ApplicationController
 
 	def index
 		@place = Place.new
-		@places = Place.all
+		@places = Place.all.order("created_at DESC")
+	end
+
+	def show
+		@place = Place.find(params[:id])
 	end
 
 	def create

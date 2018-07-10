@@ -1,5 +1,6 @@
+###
 $ ->
-
-  $('#places').masonry
-  itemSelector: '.box'
-  columnWidth: 200
+  $('#places').imagesLoaded ->
+    $('#places').masonry
+      itemSelector: '.box'
+      isFitWidth: true###
