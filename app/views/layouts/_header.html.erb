@@ -1,11 +1,7 @@
 <header class="container-fluid">
-  <div id="site-logo">
-    <img id="logo" src="https://www.freelogodesign.org/Content/img/logo-ex-7.png" alt="<%= site_name %>">
-    <span id="site-name"><%= link_to "Places", root_path %></span>
-  </div>
-  <div id="add-place">
-    <button type="button" class="show-places-form btn btn-primary" rel="background-places_form">Add place</button>
-  </div>
-  <div id="sign-in">
-  </div>
+
+  <%= link_to image_tag("https://www.freelogodesign.org/Content/img/logo-ex-7.png", class: "logo", height: "50"), root_path %>
+  <%= render 'layouts/navbar' %>
+
+
 </header>

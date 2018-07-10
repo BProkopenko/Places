@@ -1,0 +1,21 @@
+<div id="login">
+  <%= form_for(:user, url: user_session_path) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", placeholder: "E-mail" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+    <%= f.label :remember_me, class: "checkboxinline" do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me on this computer</span>
+    <% end %>
+
+    <%= f.submit "Sign in", class: "btn btn-primary save-place" %>
+  <% end %>
+  <div class="login_block container">
+    <p>New user?</p>
+    <button class="btn btn-primary btn-register show-register-form" rel="register">Sign up now!</button>
+  </div>
+</div>
+
+

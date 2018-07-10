@@ -1,8 +1,15 @@
 class PlacesController < ApplicationController
 
+	before_action :new_place
+
+	before_action :authenticate_user, only: [:create,:edit,:update,:destroy]
+
 	def index
-		@place = Place.new
 		@places = Place.all.order("created_at DESC")
+	end
+
+	def my_places
+		@places = current_user.places
 	end
 
 	def show
@@ -10,7 +17,7 @@ class PlacesController < ApplicationController
 	end
 
 	def create
-		@place = add_place(place_params)
+		@place = current_user.places.build(place_params)
 		if @place.save
 			flash[:success] = "Place crated"
 			redirect_to root_url
@@ -46,4 +53,10 @@ class PlacesController < ApplicationController
 	def place_params
 		params.require(:place).permit(:name, :description, :picture)
 	end
+
+	def authenticate_user
+		:user_signed_in?
+	end
+
+
 end

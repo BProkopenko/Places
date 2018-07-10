@@ -4,35 +4,54 @@
     <title>Places</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
-  <div id="flashMessages">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "alert alert-info"%>
-    <% end %>
-  </div>
-  <%= render 'places/place_form' %>
-  <%= render 'layouts/header' %>
-
-  <div class="container content">
-    <%= yield %>
-  </div>
+    <div id="flashMessages">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
+    </div>
+    <%= render 'layouts/pop_up' %>
+    <%= render 'layouts/header' %>
+    <div class="container content">
+      <%= yield %>
+    </div>
+  <script>
+      $('.show-places-form').click(function () {
+          var form_id = $('#' + $(this).attr("rel"));
+          $(form_id).show();
+          $('.place-form').show();
+      })
+      $('.close-form').click(function () {
+          $('.place-form, #background-places_form').hide();
+      })
+      $('.show-sign-in-form').click(function () {
+          var form_id = $('#' + $(this).attr("rel"));
+          $(form_id).show();
+          $('.sign-in-form').show();
+      })
+      $('.close-form').click(function () {
+          $('.sign-in-form, #background-places_form').hide();
+      })
+      $('.show-login-form').click(function () {
+          var form_id = $('#' + $(this).attr("rel"));
+          $(form_id).show();
+      })
+      $('.btn-login').click(function () {
+          $('#register').hide();
+      })
+      $('.show-register-form').click(function () {
+          var form_id = $('#' + $(this).attr("rel"));
+          $(form_id).show();
+      })
+      $('.btn-register').click(function () {
+          $('#login').hide();
+      })
+  </script>
   </body>
+
 </html>
-<script type="text/javascript">
-    $('.show-places-form').click(function () {
-        var form_id = $('#' + $(this).attr("rel"));
-        $(form_id).show();
-        $('.place-form').show();
-
-    })
-    $('.close-form').click(function () {
-        $('.place-form, #background-places_form').hide();
-
-    })
-
-</script>

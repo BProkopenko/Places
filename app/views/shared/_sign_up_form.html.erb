@@ -1,0 +1,22 @@
+<div id="register">
+  <%= form_for(:user, url: user_registration_path, class: "register_form") do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", placeholder: "E-mail" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "Sign up", class: "btn btn-primary save-place" %>
+
+  <% end %>
+  <div class="login_block container">
+    <div>Already a member?</div>
+    <button class="btn btn-primary btn-login show-login-form" rel="login">Login</button>
+  </div>
+
+</div>
+
+
+
+<%= render 'shared/sign_in_form' %>

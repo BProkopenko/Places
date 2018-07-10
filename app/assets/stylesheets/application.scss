@@ -10,7 +10,15 @@
 @import "header";
 @import "places";
 @import "errors";
+@import "sign_up";
+@import "sign_in";
 #flashMessages{
   position: relative;
   top: 9vh;
+}
+.navbarNavDropdown{
+  text-align: right;
+}
+.logo{
+  float: left;
 }
