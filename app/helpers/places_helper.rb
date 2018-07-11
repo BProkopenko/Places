@@ -5,7 +5,7 @@ module PlacesHelper
 	end
 
 	def col_size
-		["col1", "col2", "col3", "col4", "col5"].sample
+		["col2", "col3", "col4", "col5"].sample
 	end
 
 	def place_description

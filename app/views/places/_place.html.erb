@@ -1,5 +1,18 @@
-<div id="<%= place.id %>" class=" box <%= col_size %> ">
-  <%= link_to image_tag(place.picture), place %>
+<div id="<%= place.id %>" class="box col3">
+  <%= link_to image_tag(place.picture, class: "place-picture"), place %>
   <div class="place-name"><h3><%= place.name %></h3></div>
   <div class="place-description"><%= short_descr(place.description) %></div>
+  <% if user_signed_in? && like_active_for?(place) %>
+    <div>
+      <%= form_for @like do |f| %>
+        <%= f.hidden_field :place_id, value: place.id %>
+        <%= f.submit "♥", class: "btn btn-primary btn-like" %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if place.likes.count >= 1 %>
+    <div class="likes">
+      <span>♥</span><span> <%= place.likes.count %></span>
+    </div>
+  <% end %>
 </div>

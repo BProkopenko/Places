@@ -1,0 +1,15 @@
+// Place all the styles related to the Likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-like {
+  background-color: rgba(247, 247, 247, 0);
+  color: #007bff;
+  float: right;
+}
+
+.likes {
+  color: #007bff;
+  font-size: medium;
+  float: right;
+  position: relative;
+}

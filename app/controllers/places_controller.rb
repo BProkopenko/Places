@@ -1,15 +1,15 @@
 class PlacesController < ApplicationController
 
 	before_action :new_place
-
-	before_action :authenticate_user, only: [:create,:edit,:update,:destroy]
+	before_action :new_like
+	before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
 	def index
 		@places = Place.all.order("created_at DESC")
 	end
 
 	def my_places
-		@places = current_user.places
+		@places = current_user.places.order("created_at DESC")
 	end
 
 	def show
@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
 		@place = current_user.places.build(place_params)
 		if @place.save
 			flash[:success] = "Place crated"
-			redirect_to root_url
+			redirect_to request.referrer || root_url
 		else
 			errors = 'error'.pluralize(@place.errors.count)
 			flash[:danger] = "The form contains #{@place.errors.count} #{errors} #{@place.errors.full_messages}"
@@ -36,7 +36,7 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 		if @place.update_attributes(place_params)
 			flash[:success] = "Place updated"
-			redirect_to @place
+			redirect_to request.referrer || root_url
 		else
 			render 'edit'
 		end
@@ -53,10 +53,4 @@ class PlacesController < ApplicationController
 	def place_params
 		params.require(:place).permit(:name, :description, :picture)
 	end
-
-	def authenticate_user
-		:user_signed_in?
-	end
-
-
 end
