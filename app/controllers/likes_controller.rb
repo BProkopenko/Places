@@ -27,9 +27,20 @@ class LikesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@like = find
+		@like.destroy
+		flash[:notice] = "You unlike place"
+		redirect_to request.referrer || root_url
+	end
+
 	private
 
 	def like_params
 		params.require(:like).permit(:place_id)
+	end
+
+	def find
+		Like.find(params[:id])
 	end
 end

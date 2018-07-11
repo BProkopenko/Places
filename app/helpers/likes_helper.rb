@@ -17,4 +17,8 @@ module LikesHelper
 		@user_place_likes = @place_likes.where(user_id: current_user.id)
 		@user_place_likes.empty?
 	end
+
+	def unlike(place_id)
+		@unlike = current_user.likes.find_by(place_id: place_id)
+	end
 end

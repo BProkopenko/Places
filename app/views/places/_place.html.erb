@@ -9,6 +9,10 @@
         <%= f.submit "♥", class: "btn btn-primary btn-like" %>
       <% end %>
     </div>
+  <% elsif user_signed_in? && !like_active_for?(place) %>
+    <% unlike(place.id) %>
+    <%= link_to "Unlike", @unlike, method: :delete,
+                class: "btn btn-primary" %>
   <% end %>
   <% if place.likes.count >= 1 %>
     <div class="likes">
